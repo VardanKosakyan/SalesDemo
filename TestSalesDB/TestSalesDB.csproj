@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20200817155833_InitialDB.cs" />
+    <Compile Remove="Migrations\20200817155833_InitialDB.Designer.cs" />
+    <Compile Remove="Migrations\20200817162831_InitialDB.cs" />
+    <Compile Remove="Migrations\20200817162831_InitialDB.Designer.cs" />
+    <Compile Remove="Migrations\20200904133018_Branches.cs" />
+    <Compile Remove="Migrations\20200904133018_Branches.Designer.cs" />
+    <Compile Remove="Migrations\20200904133331_Branches.cs" />
+    <Compile Remove="Migrations\20200904133331_Branches.Designer.cs" />
+    <Compile Remove="Migrations\20200904133544_Branches.cs" />
+    <Compile Remove="Migrations\20200904133544_Branches.Designer.cs" />
+    <Compile Remove="Migrations\20200904134447_Branches.cs" />
+    <Compile Remove="Migrations\20200904134447_Branches.Designer.cs" />
+    <Compile Remove="Migrations\20200904144346_Branches.cs" />
+    <Compile Remove="Migrations\20200904144346_Branches.Designer.cs" />
+    <Compile Remove="Migrations\20200904144636_Branches.cs" />
+    <Compile Remove="Migrations\20200904144636_Branches.Designer.cs" />
+    <Compile Remove="Migrations\20200926190734_Credits.cs" />
+    <Compile Remove="Migrations\20200926190734_Credits.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="System.Runtime" Version="4.3.1" />
+  </ItemGroup>
+
+</Project>
