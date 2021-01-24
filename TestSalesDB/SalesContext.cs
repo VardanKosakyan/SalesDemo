@@ -23,7 +23,8 @@ namespace TestSalesDB
         #endregion
 
         #region config
-        private const string connectionString = "Data Source=10.0.1.114;Initial Catalog=SalesSampleDB;persist security info=True;User id=tc_general_login;Password=Aa!12345";
+        // private const string connectionString = "Data Source=10.0.1.114;Initial Catalog=SalesSampleDB;persist security info=True;User id=tc_general_login;Password=Aa!12345";
+        private const string connectionString = "Data Source=10.11.36.21;Initial Catalog=SalesDemo;persist security info=True;Integrated Security=true";// User id=tc_general_login;Password=Aa!12345";
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
