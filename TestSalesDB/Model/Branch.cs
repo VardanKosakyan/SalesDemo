@@ -8,6 +8,7 @@ namespace TestSalesDB.Model
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Address { get; set; }
         public Decimal MinTemperature { get; set; }
         public Decimal MaxTemperature { get; set; }
     }
