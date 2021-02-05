@@ -54,6 +54,7 @@ namespace TestSalesDB
             modelBuilder.Entity<Product>()
                 .HasMany<Supplier>(p => p.Suppliers)
                 .WithMany(s => s.Products)
+                
                 .UsingEntity<ProductSupply>(                     
                         ps => ps.HasOne(ps => ps.Supplier)
                             .WithMany( s=>s.ProductSupplies)
@@ -61,7 +62,8 @@ namespace TestSalesDB
                         ps => ps.HasOne(ps => ps.Product)
                             .WithMany(p=>p.ProductSupplies)
                             .HasForeignKey( ps=>ps.ProductId )                       
-                       );                  
+                       );     
+                
                       
             modelBuilder.Entity<OptionalProduct>().ToTable("OptionalProducts");
 
