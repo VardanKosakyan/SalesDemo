@@ -10,6 +10,8 @@ namespace TestSalesDB.Model
     {
         public decimal Value { get; init; }
         public Unit Unit { get; init; }
+
+        public Price() { }
         public Price(decimal Value, Unit Unit) => (this.Value, this.Unit) = (Value, Unit);
        
         #region  IComparable
