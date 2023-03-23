@@ -10,8 +10,11 @@ namespace TestSalesDB.Model
     {
         public int Id { get;  set; }
         public String Name { get; set; }
+        /*
         public DateTime CreatedDate { get; set; }
         public DateTime ModifiedDate { get; set; }
+        */
+        public MetaInfo CreationInfo { get; set; }
 
         public ICollection<Product> Products { get; set; }
         public ICollection<ProductSupply> ProductSupplies { get; set; }

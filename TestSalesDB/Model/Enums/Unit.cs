@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestSalesDB.Model
+namespace TestSalesDB.Model.Enums
 {
     public enum Unit
     {

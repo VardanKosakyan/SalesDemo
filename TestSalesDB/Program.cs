@@ -19,29 +19,26 @@ namespace TestSalesDB
             */
 
             //ex1
-            using (var ctx = new SalesContext())
-            {
-                string IsConnected(object Entity) => ctx.Entry(Entity).State == EntityState.Detached ? "Disconnected" : "Connected";
+            using var ctx = new SalesContext();
 
-                //New Creted Object is Disconnected
-                var NewProduct = new Product { Name = "Orange", CategoryId = 4 };
-                Console.WriteLine($"Just created object : {IsConnected(NewProduct)}");
+           
+            string IsConnected(object Entity) => ctx.Entry(Entity).State == EntityState.Detached ? "Disconnected" : "Connected";
 
-                //Loaded Entity Is Connected
-                var ExistingProduct = ctx.Products.Where(p => p.Id == 1).FirstOrDefault();
-                Console.WriteLine($"Loaded entity : {IsConnected(ExistingProduct)}");               
+            //New Creted Object is Disconnected
+            var NewProduct = new Product { Name = "Orange", CategoryId = 4 };
+            Console.WriteLine($"Just created object : {IsConnected(NewProduct)}");
 
-                //AsNoTracking Disconnects Entities
-                var ExistingProductNotTracked = ctx.Products.Where(p => p.Id == 2).AsNoTracking().FirstOrDefault();
-                Console.WriteLine($"Loaded AsNoTracking : {IsConnected(ExistingProductNotTracked)}");              
+            //Loaded Entity Is Connected
+            var ExistingProduct = ctx.Products.Where(p => p.Id == 1).FirstOrDefault();
+            Console.WriteLine($"Loaded entity : {IsConnected(ExistingProduct)} {ExistingProduct.Name}");               
 
-                //Connect Entity
-                ctx.Attach(NewProduct);
-                Console.WriteLine($"Attached : {IsConnected(NewProduct)}");
-              
-            }
+            //AsNoTracking Disconnects Entities
+            var ExistingProductNotTracked = ctx.Products.Where(p => p.Id == 2).AsNoTracking().FirstOrDefault();
+            Console.WriteLine($"Loaded AsNoTracking : {IsConnected(ExistingProductNotTracked)}");              
 
-
+            //Connect Entity
+            ctx.Attach(NewProduct);
+            Console.WriteLine($"Attached : {IsConnected(NewProduct)}");
         }
     }
 }
